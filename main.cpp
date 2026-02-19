@@ -35,9 +35,25 @@ int main(int arc, char** argv) {
 }
 
 void line(int ax, int ay, int bx, int by, TGAImage &framebuffer, TGAColor color) {
-	for (float t=.0; t<=1.;  t+=.02) {
-		int x = std::round((1 - t)*ax + t*bx);
-		int y = std::round((1 - t)*ay + t*by);
-		framebuffer.set(x, y, color);
+	bool steep = std::abs(ax - bx) < std::abs(ay - by);
+
+	if(steep) {
+		std::swap(ax, ay);
+		std::swap(bx, by);
+	}
+
+	if (ax > bx) {
+		std::swap(ax, bx);
+		std::swap(ay, by);
+	}
+
+	for (float x = ax; x <= bx;  x++) {
+		float t = (x - ax) / static_cast<float>(bx - ax);
+		int y = std::round(ay + (by - ay) * t);
+		if (steep) {
+			framebuffer.set(y, x, color);
+		} else {
+			framebuffer.set(x, y, color);
+		}
 	}
 }
