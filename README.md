@@ -1,6 +1,20 @@
 # Software rendering in 500 lines of bare C++
 
-**This code is of little interest. Check the [course notes](https://haqr.eu/tinyrenderer/).**
+The code itself is of little interest. Check the course notes:
+1. [Introduction](https://haqr.eu/tinyrenderer/)
+2. [Bresenham’s line drawing algorithm](https://haqr.eu/tinyrenderer/bresenham/)
+3. [Triangle rasterization](https://haqr.eu/tinyrenderer/rasterization/)
+4. [Primer on barycentric coordinates](https://haqr.eu/tinyrenderer/barycentric/)
+5. [Hidden faces removal](https://haqr.eu/tinyrenderer/z-buffer/)
+6. [A crude (but simple) approach to camera handling](https://haqr.eu/tinyrenderer/camera-naive/)
+7. [Better camera handling](https://haqr.eu/tinyrenderer/camera/)
+8. [Shading](https://haqr.eu/tinyrenderer/shading/)
+9. [More data!](https://haqr.eu/tinyrenderer/textures/)
+10. [Tangent space normal mapping](https://haqr.eu/tinyrenderer/tangent/)
+11. [Shadow mapping](https://haqr.eu/tinyrenderer/shadow/)
+12. [Indirect lighting](https://haqr.eu/tinyrenderer/ssao/)
+13. [Bonus: toon shading](https://haqr.eu/tinyrenderer/toon/)
+14. [Afterword](https://haqr.eu/tinyrenderer/afterword/)
 
 In this series of articles, I aim to demonstrate how OpenGL, Vulkan, Metal, and DirectX work by writing a simplified clone from scratch.
 Surprisingly, many people struggle with the initial hurdle of learning a 3D graphics API.
@@ -85,9 +99,3 @@ cmake --build build -j &&
 build/tinyrenderer obj/diablo3_pose/diablo3_pose.obj obj/floor.obj
 ```
 The rendered image is saved to `framebuffer.tga`.
-
-You can open the project in Gitpod, a free online dev environment for GitHub:
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ssloy/tinyrenderer)
-
-On open, the editor will compile & run the program as well as open the resulting image in the editor's preview.
-Just change the code in the editor and rerun the script (use the terminal's history) to see updated images.
